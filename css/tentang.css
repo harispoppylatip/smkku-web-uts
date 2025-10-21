@@ -1,0 +1,57 @@
+header {
+  background: linear-gradient(180deg, #0a5c36 0%, #1e7a4e 100%);
+  height: auto;
+  position: relative;
+}
+
+#bagiantengah {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gambarsekolah {
+  width: 50%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+/* profil */
+.profil {
+  margin-top: 20px;
+  position: relative;
+}
+
+.profil img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.informasi {
+  position: absolute;
+  left: 120px;
+  bottom: 60px;
+}
+
+.informasi p {
+  font-weight: bold;
+}
+
+/* bagian bawah */
+.informasi-didik {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.informasi-didik li {
+    text-align: center;    
+}
