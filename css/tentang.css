@@ -1,57 +1,86 @@
-header {
-  background: linear-gradient(180deg, #0a5c36 0%, #1e7a4e 100%);
-  height: auto;
-  position: relative;
-}
-
-#bagiantengah {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .gambarsekolah {
-  width: 50%;
+  width: 100%;
+  max-width: 720px;
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 24px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
+  box-shadow: 0 20px 45px rgba(7, 43, 28, 0.18);
 }
 
-/* profil */
+.page-grid.dua-kolom {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.page-grid.dua-kolom ul {
+  padding-left: 20px;
+  margin: 0;
+  color: #2f3e4d;
+  line-height: 1.7;
+}
+
 .profil {
-  margin-top: 20px;
-  position: relative;
+  display: grid;
+  gap: 24px;
+}
+
+.profil-kepsek {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
 .profil img {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 12px 24px rgba(9, 47, 29, 0.2);
 }
 
-.informasi {
-  position: absolute;
-  left: 120px;
-  bottom: 60px;
+.informasi h2 {
+  margin: 0;
+  color: #0a5c36;
 }
 
 .informasi p {
-  font-weight: bold;
+  margin: 6px 0 0 0;
+  font-weight: 600;
+  color: #1f2d3d;
 }
 
-/* bagian bawah */
 .informasi-didik {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
   list-style: none;
-  flex-wrap: wrap;
+  padding: 0;
+  margin: 30px 0 0 0;
 }
 
 .informasi-didik li {
-    text-align: center;    
+  background-color: rgba(10, 92, 54, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(7, 43, 28, 0.12);
+}
+
+.informasi-didik h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #0a5c36;
+}
+
+.informasi-didik p {
+  margin: 8px 0 0 0;
+  color: #2f3e4d;
+}
+
+@media (max-width: 768px) {
+  .profil-kepsek {
+    flex-direction: column;
+    text-align: center;
+  }
 }
