@@ -118,6 +118,77 @@ header {
   z-index: 1;
 }
 
+.nav.is-open {
+  display: block;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.16);
+  color: inherit;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-toggle .nav-toggle-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: background-color 0.3s ease;
+}
+
+.nav-toggle .nav-toggle-icon::before,
+.nav-toggle .nav-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle .nav-toggle-icon::before {
+  top: -6px;
+}
+
+.nav-toggle .nav-toggle-icon::after {
+  top: 6px;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.nav-toggle[aria-expanded="true"] {
+  background-color: #ffffff;
+  color: #0a5c36;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon {
+  background-color: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 .nav ul li a:hover,
 .nav ul li a:focus {
   color: #0a5c36;
@@ -305,12 +376,12 @@ header {
   width: 50%;
 }
 
-/* handphone */
-@media (max-width: 768px) {
+/* tablet dan handphone */
+@media (max-width: 1024px) {
   header {
     background: linear-gradient(180deg, #0a5c36 0%, #1e7a4e 100%);
-    min-height: 680px;
-    position: relative;
+    min-height: unset;
+    padding-bottom: 20px;
   }
 
   header.subpage-header {
@@ -318,27 +389,70 @@ header {
     height: auto;
   }
 
+  .content-header {
+    padding: 20px;
+  }
+
   .content-navbar {
-    display: flex;
-    align-items: center;
-    color: white;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+  }
+
+  .nav.is-open {
+    display: block;
   }
 
   .nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.12);
+    padding: 12px 16px;
   }
 
   .gambar-header img {
-    mask: linear-gradient(0deg, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%);
+    position: static;
+    display: block;
+    width: min(420px, 90vw);
+    margin: 20px auto 0;
   }
 
   .deks {
     position: static;
-    margin-top: 40px;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .deks {
+    text-align: left;
+  }
+
+  .deks h2 {
+    font-size: 26px;
+  }
+
+  .tomboldeks {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 12px 0;
   }
 
   .content {
@@ -348,6 +462,11 @@ header {
     grid-template-areas:
       "program"
       "berita";
+  }
+
+  .gambar-header img {
+    width: min(360px, 85vw);
+    margin-top: 10px;
   }
 
   .content-bawah {
